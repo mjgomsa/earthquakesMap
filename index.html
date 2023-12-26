@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="libraries/leaflet/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <div id="mapKey"></div>
+
+    <script>
+      const stateColors = {
+        Alaska: "rgb(169, 250, 110)",
+        Arizona: "rgb(185, 243, 95)",
+        Arkansas: "rgb(200, 236, 81)",
+        California: "rgb(214, 228, 69)",
+        Colorado: "rgb(227, 220, 60)",
+        Guam: "rgb(239, 211, 53)",
+        Hawaii: "rgb(250, 202, 50)",
+        Idaho: "rgb(255, 193, 51)",
+        Kentucky: "rgb(255, 183, 55)",
+        Maine: "rgb(255, 173, 61)",
+        Missouri: "rgb(255, 163, 69)",
+        Montana: "rgb(255, 153, 79)",
+        Nebraska: "rgb(255, 143, 89)",
+        Nevada: "rgb(255, 132, 100)",
+        "New Mexico": "rgb(255, 123, 111)",
+        "North Carolina": "rgb(255, 114, 123)",
+        Ohio: "rgb(255, 106, 136)",
+        Oklahoma: "rgb(255, 99, 148)",
+        Oregon: "rgb(255, 94, 161)",
+        "Puerto Rico": "rgb(255, 91, 174)",
+        Tennessee: "rgb(255, 91, 187)",
+        Texas: "rgb(255, 92, 199)",
+        "U.S. Virgin Islands": "rgb(246, 95, 211)",
+        Utah: "rgb(230, 99, 222)",
+        Washington: "rgb(245, 95, 212)",
+        Wyoming: "rgb(245, 95, 212)",
+      };
+
+      const mapKey = document.getElementById("mapKey");
+
+      for (const state in stateColors) {
+        if (stateColors.hasOwnProperty(state)) {
+          const row = document.createElement("div");
+          row.classList.add("row");
+
+          const square = document.createElement("div");
+          square.classList.add("square");
+          square.style.backgroundColor = stateColors[state];
+
+          const text = document.createElement("div");
+          text.classList.add("text");
+          text.textContent = `${state}`;
+
+          row.appendChild(square);
+          row.appendChild(text);
+          mapKey.appendChild(row);
+        }
+      }
+    </script>
+
+    <div id="quake-map"></div>
+
+    <!-- load our dependencies and sketch file -->
+    <script src="libraries/leaflet/leaflet.js"></script>
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/lodash.js"></script>
+    <script src="libraries/brewer.js"></script>
+    <script src="sketch.js"></script>
+
+    <!-- p5.js will create a canvas element here at runtime -->
+  </body>
+</html>

@@ -1,0 +1,42 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* default dimensions for the leaflet map */
+#quake-map{
+  width: 800px;
+  height: 600px;
+  z-index: 0;
+}
+
+#mapKey {
+  position: fixed;
+  top: 20px; /* Adjust the top and left values to position it as desired */
+  right: 0;
+  color: white; /* Set the text color to white */
+  font-size: 16px; /* Adjust the font size as needed */
+  z-index: 1;
+  border: 1px solid white;
+  margin-right: 2%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.square {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 25px;
+}
+
+.text, h3 {
+  text-align: center;
+  font-size: 12px;
+}
+
